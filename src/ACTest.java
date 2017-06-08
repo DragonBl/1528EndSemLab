@@ -6,7 +6,6 @@ import org.junit.Test;
 public class ACTest {
 	
 	AC ac;
-	RemoteControl rm;
 	boolean test;
 
 	@Before

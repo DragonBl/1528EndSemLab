@@ -4,45 +4,54 @@ public class Client {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		boolean inp = false;
 		
-		Tv Tele = new Tv(50,41);
+		Tv tele = new Tv(50,41);
 		AC ac = new AC(21);
 		HomeLights lights = new HomeLights();
 		Scanner sc = new Scanner(System.in);
-		
-		RemoteControl Rm1 = new RemoteControl(Tele);
-		RemoteControl Rm2 = new RemoteControl(ac);
-		RemoteControl Rm3 = new RemoteControl(lights);
-		
-		System.out.println("1 for TV,2 for AC,3 for HomeLights,4 to exit:");
-		System.out.println("Enter your Choice");  
-		int choice = sc.nextInt();
-	
-		switch(choice)
+		RemoteControl remote;
+				
+		while(inp == false)
 		{
-			case 1:
-				System.out.println("Tv On: "+Rm1.powerOnOff());
-				System.out.println("Channel Up : "+Rm1.ToggleUp());
-				System.out.println("Channel Down: "+Rm1.ToggleDown());
-				System.out.println("Tv OFF: "+Rm1.powerOnOff());
-			break;
+			System.out.println("\n1 for TV,2 for AC,3 for HomeLights,4 to exit:");
+			System.out.println("Enter your Choice");  
+			int choice = sc.nextInt();
 			
-			case 2:				
-				System.out.println("AC On: "+Rm2.powerOnOff());
-				System.out.println("Temp Up : "+Rm2.ToggleUp());
-				System.out.println("Temp Down: "+Rm2.ToggleDown());
-				System.out.println("AC OFF: "+Rm2.powerOnOff());
-			break;
-			
-			case 3:
-				System.out.println("Lights On: "+Rm3.powerOnOff());
-				System.out.println("Lights OFF: "+Rm3.powerOnOff());
+			switch(choice)
+			{
+				case 1:
+					remote = new RemoteControl(tele);
+					System.out.println("Tv On: "+remote.powerOnOff());
+					System.out.println("Channel Up : "+remote.ToggleUp());
+					System.out.println("Channel Down: "+remote.ToggleDown());
+					System.out.println("Tv OFF: "+remote.powerOnOff());
 				break;
 				
-			case 4:
+				case 2:
+					remote = new RemoteControl(ac);
+					System.out.println("AC On: "+remote.powerOnOff());
+					System.out.println("Temp Up : "+remote.ToggleUp());
+					System.out.println("Temp Down: "+remote.ToggleDown());
+					System.out.println("AC OFF: "+remote.powerOnOff());
 				break;
-		}	
-		
+				
+				case 3:
+					remote = new RemoteControl(lights);
+					System.out.println("Lights On: "+remote.powerOnOff());
+					System.out.println("Lights OFF: "+remote.powerOnOff());
+					break;
+					
+				case 4:
+					inp = true;
+					System.out.println("Home Controller turned off");
+					break;
+					
+				default:
+					System.out.println("Wrong Choice");
+					break;
+			}
+		}
 	}
 
 	

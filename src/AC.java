@@ -30,7 +30,7 @@ public class AC implements ControlInterface{
 			return temp;
 		}
 		else
-			return temp++;
+			return ++temp;
 		
 	}
 
@@ -41,7 +41,7 @@ public class AC implements ControlInterface{
 			return temp;
 		}
 		else
-			return temp--;
+			return --temp;
 		
 	}
 }
