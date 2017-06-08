@@ -1,5 +1,4 @@
 
-
 public class Tv implements ControlInterface {
 	
 		boolean power = false;
@@ -7,12 +6,10 @@ public class Tv implements ControlInterface {
 		private int channel;
 		
 		public Tv(int volume, int channel) {
+			
 			this.volume = volume;
 			this.channel = channel;
 		}
-		
-		public Tv(){};
-		
 		
 		@Override
 		public boolean powerOnOff() {
@@ -35,7 +32,7 @@ public class Tv implements ControlInterface {
 				return channel;
 			}
 			else
-				return ++channel;
+				return channel++;
 			
 		}
 		
@@ -46,7 +43,7 @@ public class Tv implements ControlInterface {
 				return channel;
 			}
 			else
-				return --channel;
+				return channel--;
 			
 		}
 }
